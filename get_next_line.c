@@ -16,25 +16,25 @@ char	*get_next_line(int fd)
 {
 	static char	buf[BUFFER_SIZE + 1];
 	char		*line;
-	int			i;
+	int			read_bytes;
 
-	if (fd < 0 || BUFFER_SIZE < 1)
+	if (fd == -1 || BUFFER_SIZE < 1)
 		return (NULL);
 	line = ft_strjoin(0, buf);
 	if (ft_clear(buf))
 		return (line);
-	i = read(fd, buf, BUFFER_SIZE);
-	if (i < 0)
+	read_bytes = read(fd, buf, BUFFER_SIZE);
+	if (!read_bytes)
 	{
 		free(line);
 		return (NULL);
 	}
-	while (i > 0)
+	while (read_bytes)
 	{
 		line = ft_strjoin(line, buf);
 		if (ft_clear(buf))
-			break ;
-		i = read(fd, buf, BUFFER_SIZE);
+			return (line);
+		read_bytes = read(fd, buf, BUFFER_SIZE);
 	}
 	return (line);
 }
