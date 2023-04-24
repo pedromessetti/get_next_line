@@ -6,7 +6,7 @@
 /*   By: pmessett <pmessett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 12:16:45 by pmessett          #+#    #+#             */
-/*   Updated: 2023/04/23 16:49:15 by pmessett         ###   ########.fr       */
+/*   Updated: 2023/04/24 11:41:06 by pmessett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,9 @@ char	*ft_strjoin(char *s1, char *s2)
 	if (!new_s)
 		return (NULL);
 	i = 0;
-	while (s1[i] && s1)
-		new_s[i] = s1[i];
+	j = 0;
+	while (s1 && s1[j])
+		new_s[i++] = s1[j++];
 	j = 0;
 	while (s2 && s2[j] != '\n' && s2[j])
 		new_s[i++] = s2[j++];

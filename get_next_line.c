@@ -6,7 +6,7 @@
 /*   By: pmessett <pmessett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 12:17:04 by pmessett          #+#    #+#             */
-/*   Updated: 2023/04/23 17:04:23 by pmessett         ###   ########.fr       */
+/*   Updated: 2023/04/24 11:38:53 by pmessett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*get_next_line(int fd)
 	if (ft_clear(buf))
 		return (line);
 	read_bytes = read(fd, buf, BUFFER_SIZE);
-	if (!read_bytes)
+	if (read_bytes < 0)
 	{
 		free(line);
 		return (NULL);
@@ -33,7 +33,7 @@ char	*get_next_line(int fd)
 	{
 		line = ft_strjoin(line, buf);
 		if (ft_clear(buf))
-			return (line);
+			break ;
 		read_bytes = read(fd, buf, BUFFER_SIZE);
 	}
 	return (line);
