@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmessett <pmessett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 12:17:04 by pmessett          #+#    #+#             */
-/*   Updated: 2023/04/24 12:02:59 by pmessett         ###   ########.fr       */
+/*   Updated: 2023/04/24 11:59:27 by pmessett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*get_next_line(int fd)
 {
@@ -18,7 +18,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	int			read_bytes;
 
-	if (fd == -1 || BUFFER_SIZE < 1)
+	if (fd == -1 || BUFFER_SIZE < 1 || FOPEN_MAX < fd)
 		return (NULL);
 	line = ft_strjoin(0, buf[fd]);
 	if (ft_clear(buf[fd]))

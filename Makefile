@@ -8,7 +8,7 @@ CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
 
 SRCS = get_next_line.c \
 get_next_line_utils.c \
-main.c
+main.c 
                      
 OBJS = $(SRCS:.c=.o)
 
