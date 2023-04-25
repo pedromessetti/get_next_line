@@ -1,6 +1,0 @@
-Lorem
-ipsum
-   dolor
-000
-
-size_t

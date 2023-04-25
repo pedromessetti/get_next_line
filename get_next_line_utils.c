@@ -6,7 +6,7 @@
 /*   By: pmessett <pmessett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 12:16:45 by pmessett          #+#    #+#             */
-/*   Updated: 2023/04/24 11:41:06 by pmessett         ###   ########.fr       */
+/*   Updated: 2023/04/24 13:53:11 by pmessett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ char	*ft_strjoin(char *s1, char *s2)
 
 int	ft_clear(char *s)
 {
-	int	i;
-	int	j;
-	int	is_new_line;
+	size_t	i;
+	size_t	j;
+	int		is_new_line;
 
 	i = 0;
 	j = 0;
